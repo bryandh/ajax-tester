@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>AJAX Test page</title>
+</head>
+<body>
+    AJAX Test page<br/>
+    See console for success/error callback result
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            url: "https://google.com/",
+            method: "GET",
+            dataType: "json",
+            data: {},
+            success: function (response) {
+                console.log('ajax success: ', response);
+            },
+            error: function (request, status, error) {
+                console.error('ajax error: ', request, status, error);
+            }
+        });
+    </script>
+</body>
+</html>
